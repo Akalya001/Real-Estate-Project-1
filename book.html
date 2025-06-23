@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Book Property</title>
+  
+</head>
+<style>
+  body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-image: url('./images/book\ back\ img-2.jpg'); 
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      height: 100vh;
+    }
+
+    header {
+      background-color: rgba(0, 0, 0, 0.6);
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 10px;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    .booking-section {
+      background-color: rgba(255, 255, 255, 0.9);
+      max-width: 500px;
+      margin: 50px auto;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+    }
+
+    .booking-section input {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    .booking-section button {
+      padding: 10px 20px;
+      margin-right: 10px;
+      border: none;
+      border-radius: 5px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .booking-section button[type="submit"] {
+      background-color: #28a745;
+      color: white;
+    }
+
+    .booking-section button[type="button"] {
+      background-color: #dc3545;
+      color: white;
+    }
+
+    .booking-section button:hover {
+      opacity: 0.9;
+    }
+</style>
+<body>
+  <header>
+    <h1>Booking Form</h1>
+    <nav>
+      <a href="index.html">Home</a>
+    </nav>
+  </header>
+
+  <section class="booking-section">
+    <form id="bookingForm" onsubmit="submitBooking(event)">
+      <label>Full Name:</label><br>
+      <input type="text" name="fullname" required><br><br>
+
+      <label>Email:</label><br>
+      <input type="email" name="email" required><br><br>
+
+      <label>Phone:</label><br>
+      <input type="tel" name="phone" required><br><br>
+
+      <label>Preferred Visit Date:</label><br>
+      <input type="date" name="visitDate" required><br><br>
+
+      <button type="submit">Submit</button>
+      <button type="button" onclick="cancelBooking()">Cancel</button>
+    </form>
+  </section>
+
+  <script>
+    function submitBooking(event) {
+      event.preventDefault();
+      alert("Booking submitted successfully!");
+      window.location.href = "index.html";
+    }
+
+    function cancelBooking() {
+      if (confirm("Are you sure you want to cancel the booking?")) {
+        window.location.href = "index.html";
+      }
+    }
+  </script>
+</body>
+</html>

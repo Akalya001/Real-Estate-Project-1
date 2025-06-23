@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Login - Real Estate Portal</title>
+  <link rel="stylesheet" href="style4.css">
+</head>
+<body>
+  <header>
+    
+    <img src="images/company logo.png" alt="Company Logo" class="logo">
+    <h1>NEW USER LOGIN</h1>
+    <nav>
+      <a href="index.html">Home</a>
+       <a href="about.html">About</a>
+      <a href="login.html">Login</a>
+      
+    </nav>
+  </header>
+
+  <div class="container">
+    <div class="login-wrapper">
+      
+      <form id="userForm">
+        <input type="text" placeholder="Name" required>
+        <input type="email" placeholder="Mail id" required>
+        <input type="text" placeholder="Username" required>
+        <input type="password" placeholder="Password" required>
+        <button type="submit">Signup</button>
+      </form>
+    </div>
+  </div>
+  <script>
+    document.getElementById("userForm").addEventListener("submit",function (e){
+      e.preventDefault();
+      window.location.href ="login.html"
+    });
+  </script>
+</body>
+</html>

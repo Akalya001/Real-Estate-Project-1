@@ -1,0 +1,81 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: rgb(110, 138, 138) ;
+}
+
+header {
+  background: #333;
+  color: white;
+  padding: 1rem;
+  text-align: center;
+}
+
+nav a {
+  color:  rgb(6, 243, 164);
+  margin: 0 1rem;
+  text-decoration: none;
+}
+
+.home-gallery {
+  padding: 2rem;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.property {
+  height: 250px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+.property:hover {
+  transform: scale(1.03);
+  filter: brightness(1.1);
+}
+
+.property-info {
+  background: rgba(0,0,0,0.6);
+  color: white;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 1rem;
+  transition: backgroun 0.3s ease;
+}
+
+
+.view-btn,
+.book-btn {
+  margin-right: 10px;
+  background: #00c292;
+  color: white;
+  border: none;
+  padding: 0.4rem 0.8rem;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: backgroun 0.3s ease, transform 0.3s ease;
+}
+
+.book-btn {
+  background: #ff5e5e;
+}
+
+
+.view-btn:hover,
+.book-btn:hover {
+  background: #009c79;
+  transform: scale(1.05);
+  opacity: 0.9;
+}
+.book-btn:hover {
+  background: #e74c4c;
+}

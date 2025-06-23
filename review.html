@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Home Reviews - Real Estate</title>
+  <link rel="stylesheet" href="style6.css">
+  <style>
+    .review-form {
+      background: #ff7d7d;
+      padding: 20px;
+      margin: 20px auto;
+      max-width: 600px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+
+    .review-form input, .review-form textarea, .review-form select {
+      width: 100%;
+      padding: 10px;
+      margin-top: 10px;
+      margin-bottom: 20px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    .review-form button {
+      padding: 10px 20px;
+      background: #005b96;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .review-form button:hover {
+      background-color: #003d66;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Customer Reviews</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <a href="login.html">Login</a>
+      <a href="review.html" class="active">Reviews</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="reviews" id="reviewsSection">
+      <h2>What Our Customers Say</h2>
+
+      <div class="review">
+        <h3>Rajesh Kumar</h3>
+        <p>"Amazing property listings and very responsive agents. I found my dream home within days!"</p>
+        <span>⭐⭐⭐⭐⭐</span>
+      </div>
+
+      <div class="review">
+        <h3>Priya Nair</h3>
+        <p>"Smooth booking process and professional service. Highly recommended for first-time buyers."</p>
+        <span>⭐⭐⭐⭐⭐</span>
+      </div>
+
+      <div class="review">
+        <h3>Arun V</h3>
+        <p>"The beachside villa I booked was just as shown in the pictures. Beautiful view and peaceful area."</p>
+        <span>⭐⭐⭐⭐</span>
+      </div>
+
+      <div class="review">
+        <h3>Deepika R</h3>
+        <p>"Easy navigation, great UI, and the support team helped me pick the perfect eco-home."</p>
+        <span>⭐⭐⭐⭐⭐</span>
+      </div>
+    </section>
+
+    <section class="review-form">
+      <h2>Write Your Review</h2>
+      <form id="reviewForm">
+        <input type="text" id="name" placeholder="Your Name" required />
+        <textarea id="message" placeholder="Write your review..." required></textarea>
+        <select id="rating" required>
+          <option value="">Select Rating</option>
+          <option value="5">⭐⭐⭐⭐⭐</option>
+          <option value="4">⭐⭐⭐⭐</option>
+          <option value="3">⭐⭐⭐</option>
+          <option value="2">⭐⭐</option>
+          <option value="1">⭐</option>
+        </select>
+        <button type="submit">Submit Review</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Real Estate Portal. All rights reserved.</p>
+  </footer>
+
+  <script>
+    document.getElementById('reviewForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      const name = document.getElementById('name').value.trim();
+      const message = document.getElementById('message').value.trim();
+      const rating = document.getElementById('rating').value;
+
+      if (name && message && rating) {
+        const reviewSection = document.getElementById('reviewsSection');
+
+        const reviewDiv = document.createElement('div');
+        reviewDiv.classList.add('review');
+
+        const h3 = document.createElement('h3');
+        h3.textContent = name;
+
+        const p = document.createElement('p');
+        p.textContent = `"${message}"`;
+
+        const span = document.createElement('span');
+        span.textContent = '⭐'.repeat(parseInt(rating));
+
+        reviewDiv.appendChild(h3);
+        reviewDiv.appendChild(p);
+        reviewDiv.appendChild(span);
+
+        reviewSection.appendChild(reviewDiv);
+
+        // Clear form fields
+        document.getElementById('reviewForm').reset();
+      }
+    });
+  </script>
+</body>
+</html>
